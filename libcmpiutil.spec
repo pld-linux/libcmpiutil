@@ -6,11 +6,12 @@ Summary:	CMPI toolkit library for writing providers
 Summary(pl.UTF-8):	Biblioteka narzędziowa CMPI do pisania dostarczycieli
 Name:		libcmpiutil
 Version:	0.5.7
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	ftp://libvirt.org/libvirt-cim/%{name}-%{version}.tar.bz2
 # Source0-md5:	c5813eb39f5e3157048b8b6c9904d237
+Patch0:		%{name}-inline.patch
 URL:		http://libvirt.org/
 BuildRequires:	bison
 BuildRequires:	doxygen
@@ -67,6 +68,7 @@ Statyczna biblioteka libcmpiutil.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure \
